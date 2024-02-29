@@ -4,60 +4,68 @@
 ----------------------------------------------------------------------------- */
 //? Requaring
 const { mongoose } = require("../configs/dbConnection");
-
-const passwordEncrypt = require("../helpers/passwordEncrypt");
 /* -------------------------------------------------------------------------- */
 // {
-//     "username": "test",
-//     "password": "1234",
-//     "email": "cihanbagriyanikde@gmail.com",
-//     "isAdmin": "true"
+//     "flightNumber": "ABC777",
+//     "airline": "Lufthansa",
+//     "departure": "Munich",
+//     "departureDate": "01.01.2024",
+//     "arrival": "Antalya",
+//     "arrivalDate": "01.01.204",
 // }
 /* -------------------------------------------------------------------------- */
-//? User Model:
-const UserSchema = new mongoose.Schema(
+//? Flight Model:
+const FlightSchema = new mongoose.Schema(
   {
-    username: {
+    flightNumber: {
       type: String,
       trim: true,
       required: true,
       unique: true,
     },
 
-    password: {
+    airline: {
       type: String,
       trim: true,
       required: true,
-      set: (password) => passwordEncrypt(password),
     },
 
-    email: {
+    departure: {
       type: String,
       trim: true,
       required: true,
-      unique: true,
     },
 
-    isActive: {
-      type: Boolean,
-      default: true,
+    departureDate: {
+      type: Date,
+      trim: true,
+      required: true,
     },
 
-    isStaff: {
-      type: Boolean,
-      default: false,
+    arrival: {
+      type: String,
+      trim: true,
+      required: true,
     },
 
-    isAdmin: {
-      type: Boolean,
-      default: false,
+    arrivalDate: {
+      type: Date,
+      trim: true,
+      required: true,
+    },
+
+    createdId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
   },
+
   {
-    collection: "users",
+    collection: "flights",
     timestamps: true,
   }
 );
 
 /* -------------------------------------------------------------------------- */
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("Flight", FlightSchema);

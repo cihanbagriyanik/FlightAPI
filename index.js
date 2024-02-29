@@ -71,7 +71,7 @@ app.use("/users", require("./src/routes/user"));
 // token:
 app.use("/tokens", require("./src/routes/token"));
 // document:
-// app.use("/documents", require("./src/routes/document"));
+app.use("/documents", require("./src/routes/document"));
 
 /* -------------------------------------------------------------------------- */
 //? errorHandler:
