@@ -8,9 +8,9 @@ const { mongoose } = require("../configs/dbConnection");
 // {
 //     "firstName": "cihan",
 //     "lastName": "ccccc",
-//     "gender": "M",
+//     "gender": "Male",
 //     "email": "cihan@site.com",
-//     "createdId": ""
+//     "createdId": "65e21ae8f6d4cc0bb1c11e35"
 // }
 /* -------------------------------------------------------------------------- */
 //? Passenger Model:

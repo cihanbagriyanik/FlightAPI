@@ -13,7 +13,6 @@ const passwordEncrypt = require("../helpers/passwordEncrypt");
 //     "email": "test@site.com",
 //     "isAdmin": false,
 //     "isStaff": false,
-//     "isActive": true,
 // }
 /* -------------------------------------------------------------------------- */
 //? User Model:

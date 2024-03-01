@@ -8,6 +8,8 @@ const { mongoose } = require("../configs/dbConnection");
 /* -------------------------------------------------------------------------- */
 // {
 //   "flightId": "",
+//   "userId": "65e21ae8f6d4cc0bb1c11e35",
+//   "createdId": "65e21ae8f6d4cc0bb1c11e35"
 //   "passengers": [
 //       "",
 //       ""
@@ -23,6 +25,8 @@ If there is a passenger with the already logged in user the given ID , add it to
 
 // {
 //   "flightID": "",
+//   "userId": "65e21ae8f6d4cc0bb1c11e35",
+//   "createdId": "65e21ae8f6d4cc0bb1c11e35"
 //   "passengers": [
 //       "",
 //       "",
@@ -37,7 +41,7 @@ If there is a passenger with the already logged in user the given ID , add it to
 //? Reservation Model:
 const ReservationSchema = new mongoose.Schema(
   {
-    userId: {
+    flightId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Flight",
       required: true,
