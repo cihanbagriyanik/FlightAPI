@@ -142,6 +142,42 @@
         ],
         "summary": "Create User",
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -182,6 +218,40 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -225,6 +295,685 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          }
+        }
+      }
+    },
+    "/flights/": {
+      "get": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "List Flights",
+        "description": "  You can send query with endpoint for search[], sort[], page and limit.  <ul> Examples:  <li>URL/?<b>filter[field1]=value1&filter[field2]=value2</b></li>  <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>  <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>  <li>URL/?<b>page=2&limit=1</b></li>  </ul>  ",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Create Flight",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Flightname": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/flights/{id}": {
+      "get": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Get Single Flight",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Update Flight",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Flightname": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Delete Flight",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Update Flight",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Flightname": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          }
+        }
+      }
+    },
+    "/passengers/": {
+      "get": {
+        "tags": [
+          "Passengers"
+        ],
+        "summary": "List Passengers",
+        "description": "  You can send query with endpoint for search[], sort[], page and limit.  <ul> Examples:  <li>URL/?<b>filter[field1]=value1&filter[field2]=value2</b></li>  <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>  <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>  <li>URL/?<b>page=2&limit=1</b></li>  </ul>  ",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Passengers"
+        ],
+        "summary": "Create Passenger",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/passengers/{id}": {
+      "get": {
+        "tags": [
+          "Passengers"
+        ],
+        "summary": "Get Single Passenger",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Passengers"
+        ],
+        "summary": "Update Passenger",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Passengername": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Passengers"
+        ],
+        "summary": "Delete Passenger",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Passengers"
+        ],
+        "summary": "Update Passenger",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Passengername": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          }
+        }
+      }
+    },
+    "/reservations/": {
+      "get": {
+        "tags": [
+          "Reservations"
+        ],
+        "summary": "List Reservations",
+        "description": "  You can send query with endpoint for search[], sort[], page and limit.  <ul> Examples:  <li>URL/?<b>filter[field1]=value1&filter[field2]=value2</b></li>  <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>  <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>  <li>URL/?<b>page=2&limit=1</b></li>  </ul>  ",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Reservations"
+        ],
+        "summary": "Create Reservation",
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reservationname": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/reservations/{id}": {
+      "get": {
+        "tags": [
+          "Reservations"
+        ],
+        "summary": "Get Single Reservation",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Reservations"
+        ],
+        "summary": "Update Reservation",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reservationname": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reservations"
+        ],
+        "summary": "Delete Reservation",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Reservations"
+        ],
+        "summary": "Update Reservation",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reservationname": {
+                  "type": "string",
+                  "example": "test"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "1234"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "test@site.com"
+                },
+                "isActive": {
+                  "type": "boolean",
+                  "example": true
+                },
+                "isStaff": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "isAdmin": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -289,12 +1038,34 @@
               "example": true
             },
             "required": {
-              "type": "boolean",
-              "example": true
+              "type": "array",
+              "example": [
+                true,
+                "Email is required."
+              ],
+              "items": {
+                "type": "string"
+              }
             },
             "unique": {
-              "type": "boolean",
-              "example": true
+              "type": "array",
+              "example": [
+                true,
+                "That email is already taken. Try another."
+              ],
+              "items": {
+                "type": "string"
+              }
+            },
+            "validate": {
+              "type": "array",
+              "example": [
+                null,
+                "Email type is not correct."
+              ],
+              "items": {
+                "type": "string"
+              }
             }
           }
         },

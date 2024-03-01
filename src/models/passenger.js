@@ -36,23 +36,19 @@ const PassengerSchema = new mongoose.Schema(
     },
 
     email: {
-      type: mongoose.Schema.Types.email,
-      ref: "User",
-      required: true,
-      /* -------------------------------------------------------------------------- */
-      //   type: String,
-      //   trim: true,
-      //   required: [true, "Email field must be required"],
-      //   unique: [true, "There is this email. Email field must be unique"],
+      type: String,
+      trim: true,
+      required: [true, "Email field must be required"],
+      unique: [true, "There is this email. Email field must be unique"],
 
-      //   validate: [
-      //     (email) => {
-      //       const regexEmailCheck =
-      //         /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      //       return regexEmailCheck.test(email);
-      //     },
-      //     "Email type is not correct.",
-      //   ],
+      validate: [
+        (email) => {
+          const regexEmailCheck =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          return regexEmailCheck.test(email);
+        },
+        "Email type is not correct.",
+      ],
     },
 
     createdId: {
