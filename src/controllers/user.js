@@ -40,6 +40,18 @@ module.exports = {
     /*
         #swagger.tags = ["Users"]
         #swagger.summary = "Create User"
+        #swagger.parameters['body'] = {
+                in: 'body',
+                required: true,
+                schema: {
+                    "username": "test",
+                    "password": "1234",
+                    "email": "test@site.com",
+                    "isActive": true,
+                    "isStaff": false,
+                    "isAdmin": false,
+                }
+            }
     */
 
     const data = await User.create(req.body);
@@ -82,6 +94,18 @@ module.exports = {
     /*
         #swagger.tags = ["Users"]
         #swagger.summary = "Update User"
+        #swagger.parameters['body'] = {
+                in: 'body',
+                required: true,
+                schema: {
+                    "username": "test",
+                    "password": "1234",
+                    "email": "test@site.com",
+                    "isActive": true,
+                    "isStaff": false,
+                    "isAdmin": false,
+                }
+            }
     */
 
     const data = await User.updateOne({ _id: req.params.id }, req.body, {

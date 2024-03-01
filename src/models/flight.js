@@ -6,12 +6,13 @@
 const { mongoose } = require("../configs/dbConnection");
 /* -------------------------------------------------------------------------- */
 // {
-//     "flightNumber": "ABC777",
+//     "flightNumber": "LFT 101",
 //     "airline": "Lufthansa",
 //     "departure": "Munich",
-//     "departureDate": "01.01.2024",
+//     "departureDate": "2024-01-01 10:00:00",
 //     "arrival": "Antalya",
-//     "arrivalDate": "01.01.204",
+//     "arrivalDate": "2024-01-01 16:00:00",
+//     "createdId": ""
 // }
 /* -------------------------------------------------------------------------- */
 //? Flight Model:
@@ -38,7 +39,6 @@ const FlightSchema = new mongoose.Schema(
 
     departureDate: {
       type: Date,
-      trim: true,
       required: true,
     },
 
@@ -50,7 +50,6 @@ const FlightSchema = new mongoose.Schema(
 
     arrivalDate: {
       type: Date,
-      trim: true,
       required: true,
     },
 

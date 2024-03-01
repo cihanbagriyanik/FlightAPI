@@ -10,8 +10,10 @@ const passwordEncrypt = require("../helpers/passwordEncrypt");
 // {
 //     "username": "test",
 //     "password": "1234",
-//     "email": "cihanbagriyanikde@gmail.com",
-//     "isAdmin": "true"
+//     "email": "test@site.com",
+//     "isAdmin": false,
+//     "isStaff": false,
+//     "isActive": true,
 // }
 /* -------------------------------------------------------------------------- */
 //? User Model:
@@ -34,8 +36,16 @@ const UserSchema = new mongoose.Schema(
     email: {
       type: String,
       trim: true,
-      required: true,
-      unique: true,
+      required: [true, "Email is required."],
+      unique: [true, "That email is already taken. Try another."],
+      validate: [
+        (email) => {
+          const regexEmailCheck =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          return regexEmailCheck.test(email);
+        },
+        "Email type is not correct.",
+      ],
     },
 
     isActive: {

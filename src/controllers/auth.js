@@ -16,6 +16,8 @@ module.exports = {
         #swagger.tags = ["Authentication"]
         #swagger.summary = "Login"
         #swagger.description = 'Login with username (or email) and password for get simpleToken and JWT'
+        _swagger.deprecated = true
+        _swagger.ignore = true
         #swagger.parameters["body"] = {
             in: "body",
             required: true,
