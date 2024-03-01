@@ -1340,7 +1340,7 @@
     "Reservation": {
       "type": "object",
       "properties": {
-        "userId": {
+        "flightId": {
           "type": "object",
           "properties": {
             "type": {
