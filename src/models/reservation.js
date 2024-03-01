@@ -16,9 +16,9 @@ const { mongoose } = require("../configs/dbConnection");
 
 /*
 ! Reservation Plus
-eğer verilen id ye ait bir yolcu var ise rezervasyona ekle id ile değil ad soyad mail ile oluşturulmak isteniyor ise
-  - bu maile ait yolcu var ise onun id sini al ekle
-  - yok ise yolcuyu oluştur sonra id sini ekle
+If there is a passenger with the already logged in user the given ID , add it to the reservation auto. If you want to create a name and surname via e-mail, not with an ID like a for other passengers(exp: friend, etc...).
+   - If there is a passenger belonging to this e-mail, get his/her ID and add it.
+   - If there is none, create the passenger and then add its ID.
 */
 
 // {
@@ -27,9 +27,9 @@ eğer verilen id ye ait bir yolcu var ise rezervasyona ekle id ile değil ad soy
 //       "",
 //       "",
 //       {
-//           "firstName": "cihan",
-//           "lastName": "ccccc",
-//           "email": "cihan@site.com",
+//           "firstName": "xxxxx",
+//           "lastName": "yyyyy",
+//           "email": "xxxxx@site.com",
 //       }
 //   ]
 // }

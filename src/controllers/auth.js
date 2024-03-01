@@ -9,6 +9,7 @@ const passwordEncrypt = require("../helpers/passwordEncrypt");
 const jwt = require("jsonwebtoken");
 
 /* -------------------------------------------------------------------------- */
+//? Auth Controller:
 module.exports = {
   //! POST
   login: async (req, res) => {
